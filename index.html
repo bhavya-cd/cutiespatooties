@@ -1,0 +1,545 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cutiespatooties Outfits</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Global styles -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1,
+    h2 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-marquee {
+      animation: marquee 18s linear infinite;
+    }
+
+    /* Hide scrollbar for the lookbook track on modern browsers */
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  </style>
+
+</head>
+
+<body class="bg-[#fffaf6] text-[#3a2e2a]">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-[#fffaf6]/90 backdrop-blur border-b">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    
+    <h1 class="text-xl md:text-2xl font-semibold tracking-wide">
+      Cutiespatooties
+    </h1>
+
+    <nav class="hidden md:flex gap-8 text-sm">
+      <a href="#home" class="hover:underline">Home</a>
+      <a href="#shop" class="hover:underline">Shop</a>
+      <a href="#logobook" class="hover:underline">Lookbook</a>
+      <a href="#about" class="hover:underline">About</a>
+    </nav>
+
+    <a href="https://wa.me/91XXXXXXXXXX"
+       class="hidden md:inline-block bg-[#3a2e2a] text-white px-5 py-2 rounded-full text-sm">
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+
+  <!-- HERO -->
+  <section id="home" class="relative h-[90vh] flex items-center justify-center">
+  <img src="assets/images/logo1.jpeg"
+       class="absolute inset-0 w-full h-full object-cover">
+
+  <div class="absolute inset-0 bg-black/30"></div>
+
+  <div class="relative text-center text-white px-6">
+    <h2 class="text-4xl md:text-6xl mb-4">Cute. Comfy. Confident.</h2>
+    <p class="max-w-xl mx-auto mb-6 text-white/90">
+      Everyday outfits designed to make you feel effortlessly you.
+    </p>
+
+    <a href="#shop"
+       class="bg-white text-[#3a2e2a] px-8 py-3 rounded-full font-medium">
+      Explore Collection
+    </a>
+  </div>
+</section>
+
+  <!-- LOOKBOOK -->
+  <section id="lookbook" class="max-w-7xl mx-auto px-6 mt-28 reveal">
+    <div class="flex items-center justify-between mb-6 gap-4">
+      <div>
+        <h2 class="text-3xl md:text-4xl mb-1">Styled in Real Life</h2>
+        <p class="text-gray-500 text-sm md:text-base">
+          Swipe through how Cutiespatooties looks on real people.
+        </p>
+      </div>
+
+      <div class="hidden md:flex items-center gap-3 text-sm">
+        <button id="lookbookPrev"
+                class="w-9 h-9 rounded-full border flex items-center justify-center hover:bg-[#3a2e2a] hover:text-white transition">
+          ‹
+        </button>
+        <button id="lookbookNext"
+                class="w-9 h-9 rounded-full border flex items-center justify-center hover:bg-[#3a2e2a] hover:text-white transition">
+          ›
+        </button>
+      </div>
+    </div>
+
+    <div class="relative">
+      <!-- Mobile arrows overlay -->
+      <div class="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-2 md:hidden pointer-events-none">
+        <button id="lookbookPrevMobile"
+                class="w-8 h-8 rounded-full bg-white/80 shadow pointer-events-auto flex items-center justify-center text-sm">
+          ‹
+        </button>
+        <button id="lookbookNextMobile"
+                class="w-8 h-8 rounded-full bg-white/80 shadow pointer-events-auto flex items-center justify-center text-sm">
+          ›
+        </button>
+      </div>
+
+      <div
+        id="lookbookTrack"
+        class="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide scroll-smooth pb-2">
+        <div class="min-w-[80%] md:min-w-[32%] snap-center shrink-0">
+          <img src="assets/images/logo6.jpeg" class="rounded-3xl object-cover h-[420px] w-full">
+        </div>
+        <div class="min-w-[80%] md:min-w-[32%] snap-center shrink-0">
+          <img src="assets/images/logo7.jpeg" class="rounded-3xl object-cover h-[420px] w-full">
+        </div>
+        <div class="min-w-[80%] md:min-w-[32%] snap-center shrink-0">
+          <img src="assets/images/logo8.jpeg" class="rounded-3xl object-cover h-[420px] w-full">
+        </div>
+      </div>
+
+      <!-- Dots -->
+      <div id="lookbookDots" class="flex justify-center gap-2 mt-4">
+        <button class="w-2.5 h-2.5 rounded-full bg-[#3a2e2a]" data-index="0"></button>
+        <button class="w-2.5 h-2.5 rounded-full bg-gray-300" data-index="1"></button>
+        <button class="w-2.5 h-2.5 rounded-full bg-gray-300" data-index="2"></button>
+      </div>
+    </div>
+  </section>
+
+<section class="overflow-hidden py-10 bg-[#fffaf6]">
+  <div class="flex whitespace-nowrap animate-marquee text-4xl md:text-6xl font-serif opacity-20">
+    <span class="mx-8">CUTIESPATOOTIES</span>
+    <span class="mx-8">COMFY</span>
+    <span class="mx-8">CUTE</span>
+    <span class="mx-8">CONFIDENT</span>
+    <span class="mx-8">CUTIESPATOOTIES</span>
+  </div>
+</section>
+
+
+
+
+  <!-- COLLECTION -->
+  <section id="shop" class="max-w-7xl mx-auto px-6 mt-24">
+  <div class="text-center mb-14">
+    <h2 class="text-4xl mb-3">Our Collection</h2>
+    <p class="text-gray-500">
+      Designed for everyday comfort with a touch of cute.
+    </p>
+  </div>
+
+  <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+
+    <!-- PRODUCT CARD -->
+    <div class="group product-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition cursor-pointer"
+         data-title="Pink Halter Top"
+         data-description="Soft and playful halter top, perfect for sunny days, brunches and casual outings."
+         data-price="₹899"
+         data-sizes="S, M, L, XL">
+      <div class="relative">
+        <img src="assets/images/logo2.jpeg"
+             class="h-[420px] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+
+        <!-- Hover CTA -->
+        <a href="https://wa.me/91XXXXXXXXXX?text=Hi!%20I%20want%20to%20order%20the%20Pink%20Halter%20Top"
+           class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-[#3a2e2a] text-white px-6 py-3 rounded-full text-sm opacity-0 group-hover:opacity-100 transition">
+          Buy on WhatsApp
+        </a>
+      </div>
+
+      <div class="p-5">
+        <h3 class="text-lg font-medium">Pink Halter Top</h3>
+        <p class="text-sm text-gray-500 mt-1">Soft • Playful • Summer-ready</p>
+      </div>
+    </div>
+
+    <!-- PRODUCT CARD -->
+    <div class="group product-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition cursor-pointer"
+         data-title="Yellow Floral Kurti"
+         data-description="Lightweight kurti with delicate floral patterns, ideal for everyday wear or festive get-togethers."
+         data-price="₹1,199"
+         data-sizes="XS, S, M, L, XL">
+      <div class="relative">
+        <img src="assets/images/logo3.jpeg"
+             class="h-[420px] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+
+        <a href="https://wa.me/91XXXXXXXXXX?text=Hi!%20I%20want%20to%20order%20the%20Yellow%20Floral%20Kurti"
+           class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-[#3a2e2a] text-white px-6 py-3 rounded-full text-sm opacity-0 group-hover:opacity-100 transition">
+          Buy on WhatsApp
+        </a>
+      </div>
+
+      <div class="p-5">
+        <h3 class="text-lg font-medium">Yellow Floral Kurti</h3>
+        <p class="text-sm text-gray-500 mt-1">Easy • Breezy • Elegant</p>
+      </div>
+    </div>
+
+    <!-- PRODUCT CARD -->
+    <div class="group product-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition cursor-pointer"
+         data-title="Red Co-ord Set"
+         data-description="Bold and comfy co-ord set that makes a statement while keeping you relaxed all day."
+         data-price="₹1,599"
+         data-sizes="S, M, L">
+      <div class="relative">
+        <img src="assets/images/logo4.jpeg"
+             class="h-[420px] w-full object-cover transition-transform duration-500 group-hover:scale-105">
+
+        <a href="https://wa.me/91XXXXXXXXXX?text=Hi!%20I%20want%20to%20order%20the%20Red%20Co-ord%20Set"
+           class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-[#3a2e2a] text-white px-6 py-3 rounded-full text-sm opacity-0 group-hover:opacity-100 transition">
+          Buy on WhatsApp
+        </a>
+      </div>
+
+      <div class="p-5">
+        <h3 class="text-lg font-medium">Red Co-ord Set</h3>
+        <p class="text-sm text-gray-500 mt-1">Bold • Comfortable • Statement</p>
+      </div>
+    </div>
+
+  </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 mt-28 reveal">
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="bg-white p-8 rounded-3xl shadow-sm md:col-span-2">
+      <h3 class="text-2xl mb-2">Designed for Everyday Life</h3>
+      <p class="text-gray-600">Comfort-first outfits that move with you.</p>
+    </div>
+
+    <div class="bg-[#3a2e2a] text-white p-8 rounded-3xl">
+      <h3 class="text-2xl">Small Batches</h3>
+      <p class="opacity-80">Thoughtfully made, not mass-produced.</p>
+    </div>
+
+    <div class="bg-[#f6ebe4] p-8 rounded-3xl">
+      <h3 class="text-2xl">Soft Fabrics</h3>
+      <p class="text-gray-600">Feels good. Looks good.</p>
+    </div>
+
+    <div class="bg-white p-8 rounded-3xl shadow-sm md:col-span-2">
+      <h3 class="text-2xl">Instagram-First Brand</h3>
+      <p class="text-gray-600">Designed for real people & real moments.</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ABOUT -->
+  <section id="about" class="max-w-4xl mx-auto px-6 mt-28 text-center">
+    <h2 class="text-4xl mb-6">Why Cutiespatooties?</h2>
+    <p class="text-gray-600 leading-relaxed">
+      We believe comfort is confidence.
+      Cutiespatooties Outfits is created for everyday wear —
+      playful, easy, and thoughtfully designed for real moments.
+    </p>
+
+    <div class="grid sm:grid-cols-3 gap-6 mt-12 text-sm">
+      <div>✔ Comfort-first designs</div>
+      <div>✔ Everyday wearability</div>
+      <div>✔ Small-batch & thoughtful</div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="mt-24 border-t py-8 text-center text-sm text-gray-500">
+    © 2026 Cutiespatooties Outfits  
+    <br />
+    Instagram & WhatsApp orders only
+  </footer>
+
+  <div class="fixed bottom-0 left-0 w-full bg-[#3a2e2a] text-white p-4 flex justify-center md:hidden z-50">
+    <a href="https://wa.me/91XXXXXXXXXX?text=Hi!%20I%20want%20to%20order%20from%20Cutiespatooties%20Outfits"
+       class="font-medium">
+      Buy on WhatsApp
+    </a>
+  </div>
+
+  <!-- PRODUCT DETAIL POPUP -->
+  <div id="productModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+    <div class="bg-[#fffaf6] rounded-3xl max-w-3xl w-[92%] md:w-[70%] overflow-hidden shadow-xl relative">
+      <button id="productModalClose"
+              class="absolute top-3 right-3 bg-black/60 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm">
+        ✕
+      </button>
+
+      <div class="grid md:grid-cols-2">
+        <div class="h-72 md:h-full">
+          <img id="productModalImage"
+               src=""
+               alt=""
+               class="w-full h-full object-cover">
+        </div>
+
+        <div class="p-6 md:p-8 flex flex-col gap-4">
+          <div>
+            <h3 id="productModalTitle" class="text-2xl font-semibold mb-1"></h3>
+            <p id="productModalShort" class="text-sm text-gray-500"></p>
+          </div>
+
+          <p id="productModalDescription" class="text-sm text-gray-600"></p>
+
+          <div class="flex flex-wrap gap-4 items-center text-sm">
+            <span class="font-medium">
+              Price:
+              <span id="productModalPrice"></span>
+            </span>
+            <span class="text-gray-500">
+              Sizes:
+              <span id="productModalSizes"></span>
+            </span>
+          </div>
+
+          <a id="productModalWhatsapp"
+             href="#"
+             target="_blank"
+             class="mt-2 inline-flex items-center justify-center bg-[#3a2e2a] text-white px-6 py-3 rounded-full text-sm font-medium">
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Entry point
+    document.addEventListener("DOMContentLoaded", () => {
+      initRevealAnimations();
+      initProductModal();
+      initLookbookCarousel();
+    });
+
+    // Fade-in on scroll for elements with .reveal
+    function initRevealAnimations() {
+      const reveals = document.querySelectorAll(".reveal");
+
+      if (!reveals.length) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      reveals.forEach((el) => observer.observe(el));
+    }
+
+    // Lookbook carousel (horizontal scroll with arrows & dots)
+    function initLookbookCarousel() {
+      const track = document.getElementById("lookbookTrack");
+      const dotContainer = document.getElementById("lookbookDots");
+      const prevDesktop = document.getElementById("lookbookPrev");
+      const nextDesktop = document.getElementById("lookbookNext");
+      const prevMobile = document.getElementById("lookbookPrevMobile");
+      const nextMobile = document.getElementById("lookbookNextMobile");
+
+      if (!track || !dotContainer) return;
+
+      const slides = Array.from(track.children);
+      const dots = Array.from(dotContainer.querySelectorAll("button[data-index]"));
+      let currentIndex = 0;
+
+      const updateDots = () => {
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle("bg-[#3a2e2a]", idx === currentIndex);
+          dot.classList.toggle("bg-gray-300", idx !== currentIndex);
+        });
+      };
+
+      const scrollToIndex = (index) => {
+        const clampedIndex = Math.max(0, Math.min(index, slides.length - 1));
+        currentIndex = clampedIndex;
+        const slide = slides[clampedIndex];
+        if (slide) {
+          slide.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        }
+        updateDots();
+      };
+
+      const goNext = () => scrollToIndex(currentIndex + 1);
+      const goPrev = () => scrollToIndex(currentIndex - 1);
+
+      // Arrow buttons
+      [nextDesktop, nextMobile].forEach((btn) => {
+        if (btn) btn.addEventListener("click", goNext);
+      });
+      [prevDesktop, prevMobile].forEach((btn) => {
+        if (btn) btn.addEventListener("click", goPrev);
+      });
+
+      // Dots click
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          const idx = Number(dot.dataset.index || 0);
+          scrollToIndex(idx);
+        });
+      });
+
+      // Sync current index based on scroll position
+      let scrollTimeout;
+      track.addEventListener("scroll", () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          let closestIndex = 0;
+          let smallestDelta = Infinity;
+
+          slides.forEach((slide, idx) => {
+            const rect = slide.getBoundingClientRect();
+            const center = rect.left + rect.width / 2;
+            const viewportCenter = window.innerWidth / 2;
+            const delta = Math.abs(center - viewportCenter);
+            if (delta < smallestDelta) {
+              smallestDelta = delta;
+              closestIndex = idx;
+            }
+          });
+
+          if (closestIndex !== currentIndex) {
+            currentIndex = closestIndex;
+            updateDots();
+          }
+        }, 80);
+      });
+
+      // Initial state
+      updateDots();
+    }
+
+    // Product detail popup logic
+    function initProductModal() {
+      const productCards = document.querySelectorAll(".product-card");
+      const modal = document.getElementById("productModal");
+      const modalClose = document.getElementById("productModalClose");
+      const modalImage = document.getElementById("productModalImage");
+      const modalTitle = document.getElementById("productModalTitle");
+      const modalShort = document.getElementById("productModalShort");
+      const modalDescription = document.getElementById("productModalDescription");
+      const modalPrice = document.getElementById("productModalPrice");
+      const modalSizes = document.getElementById("productModalSizes");
+      const modalWhatsapp = document.getElementById("productModalWhatsapp");
+
+      if (!productCards.length || !modal) return;
+
+      const openModalForCard = (card) => {
+        const img = card.querySelector("img");
+        const title = card.dataset.title || card.querySelector("h3")?.textContent?.trim() || "";
+        const shortText = card.querySelector("p.text-sm")?.textContent?.trim() || "";
+        const description = card.dataset.description || shortText;
+        const price = card.dataset.price || "";
+        const sizes = card.dataset.sizes || "";
+        const whatsappLink = card.querySelector("a[href^='https://wa.me']")?.getAttribute("href") || "#";
+
+        modalImage.src = img?.src || "";
+        modalImage.alt = title;
+        modalTitle.textContent = title;
+        modalShort.textContent = shortText;
+        modalDescription.textContent = description;
+        modalPrice.textContent = price;
+        modalSizes.textContent = sizes;
+        modalWhatsapp.href = whatsappLink;
+
+        modal.classList.remove("hidden");
+      };
+
+      const closeModal = () => {
+        modal.classList.add("hidden");
+      };
+
+      productCards.forEach((card) => {
+        card.addEventListener("click", (e) => {
+          // If the user clicks directly on the WhatsApp button, let the normal link work
+          if (e.target.tagName.toLowerCase() === "a") {
+            return;
+          }
+
+          openModalForCard(card);
+        });
+      });
+
+      if (modalClose) {
+        modalClose.addEventListener("click", closeModal);
+      }
+
+      // Close when clicking outside the card
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Close on Escape key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+          closeModal();
+        }
+      });
+    }
+  </script>
+
+
+
+</body>
+</html>

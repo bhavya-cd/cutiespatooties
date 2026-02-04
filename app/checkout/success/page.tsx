@@ -3,7 +3,9 @@
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 
-export default function CheckoutSuccessPage() {
+import { Suspense } from 'react'
+
+function SuccessContent() {
   const searchParams = useSearchParams()
   const orderId = searchParams.get('orderId')
 
@@ -47,5 +49,17 @@ export default function CheckoutSuccessPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function CheckoutSuccessPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-[70vh] flex items-center justify-center">
+        <p className="text-valentine-charcoal/60">Loading confirmation…</p>
+      </div>
+    }>
+      <SuccessContent />
+    </Suspense>
   )
 }

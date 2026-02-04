@@ -27,7 +27,9 @@ import { formatRupees } from '@/lib/utils'
  *    - Success: /checkout/success?orderId=xxx
  *    - Cancel: /checkout/payment?orderId=xxx
  */
-export default function PaymentPage() {
+import { Suspense } from 'react'
+
+function PaymentContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const orderIdParam = searchParams.get('orderId')
@@ -159,5 +161,17 @@ export default function PaymentPage() {
         </Link>
       </p>
     </div>
+  )
+}
+
+export default function PaymentPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-[50vh] flex items-center justify-center">
+        <p className="text-valentine-charcoal/60">Loading payment details…</p>
+      </div>
+    }>
+      <PaymentContent />
+    </Suspense>
   )
 }

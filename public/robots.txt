@@ -1,0 +1,20 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /admin/login/
+Disallow: /checkout/
+Disallow: /account/
+Disallow: /api/
+
+# Allow specific bot paths
+User-agent: Googlebot
+Allow: /
+
+# Specify sitemap location
+Sitemap: https://cutiespatooties.com/sitemap.xml
+
+# Crawl delay (optional - 0 means no delay)
+Crawl-delay: 0

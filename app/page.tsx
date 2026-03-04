@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import type { Metadata } from 'next'
 import ProductCard from '@/components/ProductCard'
 import LookbookCarousel from '@/components/LookbookCarousel'
 import HomeClient from './HomeClient'
@@ -7,6 +8,26 @@ import { supabase } from '@/lib/supabase'
 import { getAllProducts } from '@/lib/products'
 
 export const dynamic = 'force-dynamic'
+
+export const metadata: Metadata = {
+  title: 'Cute. Comfy. Confident. | Cutiespatooties Outfits',
+  description: 'Everyday outfits designed to make you feel effortlessly you. Celebrate love and comfort with our carefully curated collection of fashion pieces.',
+  keywords: ['outfits', 'clothing', 'fashion', 'everyday wear', 'comfortable fashion', 'cute outfits'],
+  openGraph: {
+    title: 'Cute. Comfy. Confident. | Cutiespatooties Outfits',
+    description: 'Everyday outfits designed to make you feel effortlessly you.',
+    url: 'https://cutiespatooties.com',
+    type: 'website',
+    images: [
+      {
+        url: 'https://cutiespatooties.com/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Cutiespatooties - Everyday Fashion',
+      },
+    ],
+  },
+}
 
 export default async function HomePage() {
   // Fetch from Supabase

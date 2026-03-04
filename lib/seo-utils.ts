@@ -30,7 +30,8 @@ export const generateKeywords = (
   if (brand) keywords.push(brand)
   if (category) keywords.push(category)
   keywords.push('cutiespatooties', 'everyday wear', 'comfort fashion')
-  return [...new Set(keywords)] // Remove duplicates
+  // Remove duplicates using filter
+  return keywords.filter((keyword, index) => keywords.indexOf(keyword) === index)
 }
 
 export const getImageUrl = (image: string | null): string => {

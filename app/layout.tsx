@@ -33,7 +33,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
     nocache: false,
-    'google-site-verification': process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },
   openGraph: {
     type: 'website',

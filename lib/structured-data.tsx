@@ -25,8 +25,8 @@ export const OrganizationSchema = () => {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Cutiespatooties Outfits',
-    url: 'https://cutiespatooties.com',
-    logo: 'https://cutiespatooties.com/logo.png',
+    url: 'https://cutiespatooties.in',
+    logo: 'https://cutiespatooties.in/logo.png',
     description: 'Everyday outfits designed to make you feel effortlessly you.',
     sameAs: [
       'https://www.instagram.com/cutiespatooties',
@@ -52,14 +52,14 @@ export const WebSiteSchema = () => {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    url: 'https://cutiespatooties.com',
+    url: 'https://cutiespatooties.in',
     name: 'Cutiespatooties Outfits',
     description: 'Everyday outfits designed to make you feel effortlessly you.',
     potentialAction: {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: 'https://cutiespatooties.com/search?q={search_term_string}',
+        urlTemplate: 'https://cutiespatooties.in/search?q={search_term_string}',
       },
       'query-input': 'required name=search_term_string',
     },

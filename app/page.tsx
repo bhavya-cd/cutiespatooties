@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cute. Comfy. Confident. | Cutiespatooties Outfits',
     description: 'Everyday outfits designed to make you feel effortlessly you.',
-    url: 'https://cutiespatooties.com',
+    url: 'https://cutiespatooties.in',
     type: 'website',
     images: [
       {
-        url: 'https://cutiespatooties.com/og-image.jpg',
+        url: 'https://cutiespatooties.in/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Cutiespatooties - Everyday Fashion',

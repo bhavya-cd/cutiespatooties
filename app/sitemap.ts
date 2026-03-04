@@ -3,7 +3,7 @@ import { supabase } from '@/lib/supabase'
 import { getAllProducts } from '@/lib/products'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://cutiespatooties.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://cutiespatooties.in'
 
   // Fetch all products for dynamic routes
   let products = []

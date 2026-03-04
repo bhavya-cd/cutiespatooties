@@ -14,7 +14,7 @@ User-agent: Googlebot
 Allow: /
 
 # Specify sitemap location
-Sitemap: https://cutiespatooties.com/sitemap.xml
+Sitemap: https://cutiespatooties.in/sitemap.xml
 
 # Crawl delay (optional - 0 means no delay)
 Crawl-delay: 0

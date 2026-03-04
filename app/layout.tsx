@@ -37,13 +37,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://cutiespatooties.com',
+    url: 'https://cutiespatooties.in',
     title: 'Cutiespatooties Outfits | Fashion For Every Moment',
     description: 'Discover everyday outfits designed to make you feel effortlessly you.',
     siteName: 'Cutiespatooties Outfits',
     images: [
       {
-        url: 'https://cutiespatooties.com/og-image.jpg',
+        url: 'https://cutiespatooties.in/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Cutiespatooties Fashion Outfits',
@@ -54,10 +54,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Cutiespatooties Outfits',
     description: 'Discover everyday outfits designed to make you feel effortlessly you.',
-    images: ['https://cutiespatooties.com/og-image.jpg'],
+    images: ['https://cutiespatooties.in/og-image.jpg'],
   },
   alternates: {
-    canonical: 'https://cutiespatooties.com',
+    canonical: 'https://cutiespatooties.in',
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
@@ -78,7 +78,7 @@ export default function RootLayout({
         <WebSiteSchema />
         <meta name="theme-color" content="#F5E6E0" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://cutiespatooties.com" />
+        <link rel="canonical" href="https://cutiespatooties.in" />
         {gaId && <GoogleAnalytics gaId={gaId} />}
       </head>
       <body className={`${inter.variable} ${cormorant.variable} font-sans bg-valentine-cream text-valentine-charcoal antialiased`}>

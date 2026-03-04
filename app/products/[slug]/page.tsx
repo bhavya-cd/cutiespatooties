@@ -72,8 +72,8 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     }
   }
 
-  const productUrl = `https://cutiespatooties.com/products/${product.slug}`
-  const productImage = product.images?.[0] || 'https://cutiespatooties.com/og-image.jpg'
+  const productUrl = `https://cutiespatooties.in/products/${product.slug}`
+  const productImage = product.images?.[0] || 'https://cutiespatooties.in/og-image.jpg'
 
   return {
     title: `${product.title} by ${product.brand}`,

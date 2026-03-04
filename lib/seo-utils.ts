@@ -4,7 +4,7 @@
  */
 
 export const generateCanonicalUrl = (path: string): string => {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://cutiespatooties.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://cutiespatooties.in'
   return `${baseUrl}${path}`
 }
 
@@ -35,15 +35,15 @@ export const generateKeywords = (
 }
 
 export const getImageUrl = (image: string | null): string => {
-  if (!image) return 'https://cutiespatooties.com/og-image.jpg'
+  if (!image) return 'https://cutiespatooties.in/og-image.jpg'
   if (image.startsWith('http')) return image
-  return `https://cutiespatooties.com/${image}`
+  return `https://cutiespatooties.in/${image}`
 }
 
 export const generateBreadcrumbs = (
   pagePath: string
 ): { name: string; url: string }[] => {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://cutiespatooties.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://cutiespatooties.in'
   const breadcrumbs = [{ name: 'Home', url: baseUrl }]
 
   const segments = pagePath.split('/').filter(Boolean)
